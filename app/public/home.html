@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Friend Finder</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+
+<body>
+    <h1>Friend Finder Quiz</h1>
+    <form>
+        <p>Marvel is better than DC</p>
+        <select class="form-control form-control-sm">
+            <option value="1">1 Do not agree at all</option>
+            <option value="2">2</option>
+            <option value="3">3 Neutral</option>
+            <option value="4">4</option>
+            <option value="5">5 Completely agree</option>
+        </select>
+        <p>Mad Men is better than Breaking Bad</p>
+        <select class="form-control form-control-sm">
+            <option value="1">1 Do not agree at all</option>
+            <option value="2">2</option>
+            <option value="3">3 Neutral</option>
+            <option value="4">4</option>
+            <option value="5">5 Completely agree</option>
+        </select>
+        <!-- <p>Captain Marvel is the strongest Avenger</p>
+        <select class="form-control form-control-sm">
+            <option>1 Do not agree at all</option>
+            <option>2</option>
+            <option>3 Neutral</option>
+            <option>4</option>
+            <option>5 Completely agree</option>
+        </select>
+        <p>La Croix is a good drink</p>
+        <select class="form-control form-control-sm">
+            <option>1 Do not agree at all</option>
+            <option>2</option>
+            <option>3 Neutral</option>
+            <option>4</option>
+            <option>5 Completely agree</option>
+        </select>
+        <p>Tuners are better than muscle cars</p>
+        <select class="form-control form-control-sm">
+            <option>1 Do not agree at all</option>
+            <option>2</option>
+            <option>3 Neutral</option>
+            <option>4</option>
+            <option>5 Completely agree</option>
+        </select>
+        <p>Kids are great</p>
+        <select class="form-control form-control-sm">
+            <option>1 Do not agree at all</option>
+            <option>2</option>
+            <option>3 Neutral</option>
+            <option>4</option>
+            <option>5 Completely agree</option>
+        </select>
+        <p>Dogs are better though</p>
+        <select class="form-control form-control-sm">
+            <option>1 Do not agree at all</option>
+            <option>2</option>
+            <option>3 Neutral</option>
+            <option>4</option>
+            <option>5 Completely agree</option>
+        </select>
+        <p>Peanut butter & banana sandwiches are good</p>
+        <select class="form-control form-control-sm">
+            <option>1 Do not agree at all</option>
+            <option>2</option>
+            <option>3 Neutral</option>
+            <option>4</option>
+            <option>5 Completely agree</option>
+        </select>
+        <p>Marshmellow and Peanut Butter sandwhiches are good</p>
+        <select class="form-control form-control-sm">
+            <option>1 Do not agree at all</option>
+            <option>2</option>
+            <option>3 Neutral</option>
+            <option>4</option>
+            <option>5 Completely agree</option>
+        </select>
+        <p>Man buns are cool</p>
+        <select class="form-control form-control-sm">
+            <option>1 Do not agree at all</option>
+            <option>2</option>
+            <option>3 Neutral</option>
+            <option>4</option>
+            <option>5 Completely agree</option>
+        </select> -->
+        <button type="submit" id="formSub" class="btn btn-primary">Submit</button>
+    </form>
+
+
+</body>
+<script>
+
+    $("#formSub").on("click", function (event) {
+        event.preventDefault();
+
+        var newFriend = [];
+        $("select option:selected").each(function() { newFriend.push($(this).val() )})
+        console.log(newFriend);
+    }) 
+</script>
+
+</html>
