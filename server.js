@@ -9,7 +9,7 @@ app.use(express.json());
 
 require("./app/routing/apiRoutes.js")(app);
 require("./app/routing/htmlRoutes.js")(app);
-
+var friend = require("./app/routing/apiRoutes.js")
 
 
 

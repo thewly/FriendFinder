@@ -1,26 +1,40 @@
 var friends = require("../data/friends.js")
 
 
-
+// return the friends object
 module.exports = function (app) {
-
     app.get("/api/friends", function (req, res) {
-        return res.json(friends);
+        res.json(friends);
     });
-    
+
+
     app.post("/api/friends", function (req, res) {
-        // req.body hosts is equal to the JSON post sent from the user
-        // This works because of our body parsing middleware
+
+        console.log(req.body.scores);
+
+        // new friend's information & parse
         var newfriend = req.body;
-        
-        // Using a RegEx Pattern to remove spaces from newCharacter
-        // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
-        newfriend.routeName = newfriend.name.replace(/\s+/g, "").toLowerCase();
-        
-        console.log(newfriend);
-        
+        for (var i = 0; i < newfriend.scores.length; i++) {
+            newfriend.scores[i] = parseInt(newfriend.scores[i]);
+        }
+
+        var bestFriendIndex = 0;
+        var maximumDifference = 40;
+
+        for (var i = 0; i < friends.length; i++) {
+            var totalDifference = 0;
+            for (var j = 0; j < friends[i].scores; j++) {
+                var difference = Math.abs(newfriend.scores[j] - friends[i].scores[j]);
+                totalDifference += difference;
+            }
+            if (totalDifference < maximumDifference) {
+                bestFriendIndex = i;
+                maximumDifference = totalDifference;
+            }
+        }
+
         friends.push(newfriend);
-        
-        res.json(newfriend);
-    });  
-}
+
+        res.json(friends[bestFriendIndex]);
+    });
+};

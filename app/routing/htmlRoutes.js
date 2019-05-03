@@ -2,15 +2,14 @@ var path = require("path");
 
 module.exports = function (app) {
 
-    app.get("/", function (req, res) {
-        res.sendFile(path.join(__dirname, "../public/home.html"));
+    // homepage routing
+    app.use(function (req, res) {
+        res.sendFile(path.join(__dirname, "/../public/home.html"));
     });
     
+    // survey page routing
     app.get("/survey", function (req, res) {
-        res.sendFile(path.join(__dirname, "../public/survey.html"));
+        res.sendFile(path.join(__dirname, "/../public/survey.html"));
     });
     
-}
-// app.get("/friends", function (req, res) {
-//     res.sendFile(path.join(__dirname, "friends.html"));
-// });
+};
